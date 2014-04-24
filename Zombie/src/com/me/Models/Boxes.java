@@ -2,6 +2,7 @@ package com.me.Models;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
@@ -21,8 +22,7 @@ public class Boxes {
 	public Boxes(World world){
 		Input();
 		BodyDef bodyDef = new BodyDef();
-		FixtureDef fixtureDef = new FixtureDef();
-			
+		FixtureDef fixtureDef = new FixtureDef();	
 			//BOX
 			//bodyDef
 			bodyDef.type = BodyType.DynamicBody;
@@ -76,8 +76,8 @@ public class Boxes {
 			}
 		});
 	}
-	
-	public void Force(){
+	public void update(Camera camera, float delta){
 		box.applyForceToCenter(movement, true);
+		camera.position.set(box.getPosition().x, box.getPosition().y, 0);
 	}
 }

@@ -13,12 +13,12 @@ public class Ground {
 	FixtureDef fixtureDef = new FixtureDef();
 	
 	public Ground(World world){
-		bodyDef.type = BodyType.DynamicBody;
+		bodyDef.type = BodyType.KinematicBody;
 		bodyDef.position.set(1f, 0);
 		
 		//Box Shape
 		PolygonShape boxShape = new PolygonShape();
-		boxShape.setAsBox(.5f, 1);
+		boxShape.setAsBox(15f, 1);
 		
 		//Fixture Def
 		fixtureDef.shape = boxShape;

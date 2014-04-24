@@ -15,7 +15,7 @@ public class Circle {
 	World world;
 	
 	public Circle(World world){
-		bodyDef.type = BodyType.DynamicBody;
+		bodyDef.type = BodyType.StaticBody;
 		bodyDef.position.set(10.25f, 10);
 		
 		//ball shape
